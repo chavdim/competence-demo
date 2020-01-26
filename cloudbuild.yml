@@ -1,0 +1,16 @@
+steps:
+  # build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--network=cloudbuild', '-f', 'Dockerfile', '-t', 'gcr.io/splive-dev/web-server:$COMMIT_SHA', '.']
+    # push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/splive-dev/web-server:$COMMIT_SHA']
+    # Deploy container image to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['beta', 'run', 'deploy', 'skillz-dev', '--image',
+           'gcr.io/splive-dev/web-server:$COMMIT_SHA', '--region',
+           'asia-northeast1','--platform', 'managed', '--allow-unauthenticated', '--quiet']
+images:
+  - gcr.io/splive-dev/web-server:$COMMIT_SHA
+
+
