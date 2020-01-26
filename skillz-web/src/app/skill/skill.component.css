@@ -1,0 +1,20 @@
+.skill-card {
+  min-width: 575px !important;
+  height: 110px;
+}
+.level-bar {
+  position: absolute;
+  width:88% !important;
+}
+
+.tags {
+  position: relative;
+  top: 38px;
+  float: right;
+}
+.skill-icon{
+  position: absolute;
+  left: 26px;
+  top: 26px;
+}
+

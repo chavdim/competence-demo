@@ -1,0 +1,44 @@
+<div class="center">
+<mat-card matBadge="{{skill.newCount}}" matBadgeOverlap="false"  matBadgeColor="accent" class="skill-card">
+
+  <div class="level-bar">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+  </div>
+
+
+  <mat-card-header>
+    <div class="skill-icon">
+    <mat-icon  aria-hidden="false" aria-label="Example home icon">build</mat-icon>
+    </div>
+
+    <div  mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{skill.name}}</mat-card-title>
+    <div style="right: 19px; position: absolute">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+    </div>
+
+    <!--    <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+  </mat-card-header>
+
+
+
+  <mat-card-content>
+<!--    <p>-->
+<!--      {{skill.description}}-->
+<!--    </p>-->
+    <div class="tags" *ngFor="let t of skill.tags">
+      <button style="margin-right: 5px" mat-raised-button color="primary">{{t}}</button>
+    </div>
+  </mat-card-content>
+<!--  <mat-card-actions>-->
+<!--    <button mat-button>LIKE</button>-->
+<!--    <button mat-button>SHARE</button>-->
+<!--  </mat-card-actions>-->
+</mat-card>
+</div>

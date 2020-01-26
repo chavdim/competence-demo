@@ -1,0 +1,13 @@
+.center {
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+.quater-select {
+  margin:  12px;
+}
+.q-select {
+  min-width: 575px !important;
+  height: 55px;
+  margin-top: 20px;
+}
