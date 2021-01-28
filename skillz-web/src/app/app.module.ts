@@ -16,7 +16,7 @@ import {
   MatListModule, MatSelectModule, MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
-import {ChartsModule} from 'ng2-charts';
+import { ChartsModule, ThemeService } from 'ng2-charts';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { QuaterSelectionComponent } from './quater-selection/quater-selection.component';
 
@@ -45,7 +45,7 @@ import { QuaterSelectionComponent } from './quater-selection/quater-selection.co
     MatInputModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
